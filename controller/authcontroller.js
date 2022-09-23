@@ -18,7 +18,7 @@ export const login = (req, res) => {
                 if (result.length === 0) {
                     res.status(401).json({ message: 'Login failed' })
                 }
-                res.cookie('rftoken', createRefreshToken(result[0]), {...cookieConfig,path:'/api/refresh'})
+                // res.cookie('rftoken', createRefreshToken(result[0]), {...cookieConfig,path:'/api/refresh'})
                 res.cookie('actoken', createAccessToken(result[0]), cookieConfig)
                 res.status(200).json({ message: 'Login sucessfully' })
             })
