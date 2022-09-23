@@ -12,8 +12,8 @@ app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 
-app.get('/api/posts', createPost )
-app.post('/api/login',encrypt, login)
+app.get('/api/posts', createPost)
+app.post('/api/login', encrypt, login)
 
 app.listen(9898)
 
