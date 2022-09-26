@@ -17,10 +17,12 @@ export const login = (req, res) => {
             collection.find(user).toArray().then(result => {
                 if (result.length === 0) {
                     res.status(401).json({ message: 'Login failed', state: false })
+                } else {
+                    // res.cookie('rftoken', createRefreshToken(result[0]), {...cookieConfig,path:'/api/refresh'})
+                    res.cookie('actoken', createAccessToken(result[0]), cookieConfig)
+                    res.status(200).json({ message: 'Login sucessfully', state: true })
                 }
-                // res.cookie('rftoken', createRefreshToken(result[0]), {...cookieConfig,path:'/api/refresh'})
-                res.cookie('actoken', createAccessToken(result[0]), cookieConfig)
-                res.status(200).json({ message: 'Login sucessfully', state: true })
+
             })
 
         })

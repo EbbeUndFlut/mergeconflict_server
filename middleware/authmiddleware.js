@@ -8,3 +8,9 @@ export const checkToken = (req, res, next) => {
     next()
 
 }
+
+export const validateToken = (req, res) => {
+    const result = verifyAccessToken(req.cookies.actoken)
+    console.log(result)
+    res.json({state:true})
+}
