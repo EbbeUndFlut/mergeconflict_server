@@ -5,7 +5,7 @@ export const createPost = async (req, res) => {
     const post = {
         title:req.body.title,
         content: req.body.content,
-        imgurl: req.body.imgurl,
+        imgurl: req.file.filename,
         category: req.body.category
     }
 
