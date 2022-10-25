@@ -1,13 +1,8 @@
 
-import {getDb} from '../utils/db.js'
+import { getDb } from '../utils/db.js'
 
 export const createPost = async (req, res) => {
-    const post = {
-        title:req.body.title,
-        content: req.body.content,
-        imgurl: req.file.filename,
-        category: req.body.category
-    }
+    const post = req.body
 
     const db = await getDb()
     await db.collection('posts').insertOne(post)
