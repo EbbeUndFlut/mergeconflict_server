@@ -4,7 +4,7 @@ import { createAccessToken, createRefreshToken } from "../utils/token.js"
 
 const cookieConfig = {
     httpOnly: true,
-    sameSite: none,
+    sameSite: 'none',
     // secure: true
 }
 
