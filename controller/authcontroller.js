@@ -3,7 +3,7 @@ import { createAccessToken, createRefreshToken } from "../utils/token.js"
 
 const cookieConfig = {
     httpOnly: true,
-    secure: true
+    // secure: true
 }
 
 export const login = (req, res) => {
