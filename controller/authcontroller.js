@@ -1,8 +1,10 @@
+import nodemon from "nodemon"
 import { getDb } from "../utils/db.js"
 import { createAccessToken, createRefreshToken } from "../utils/token.js"
 
 const cookieConfig = {
     httpOnly: true,
+    sameSite: none,
     // secure: true
 }
 
